@@ -16,18 +16,48 @@ export function SiteFooter() {
         <div>
           <p className="eyebrow mb-4 text-accent">{t.footer.nav}</p>
           <ul className="space-y-2 text-sm opacity-85">
-            <li><a href="/#about">{t.nav.about}</a></li>
-            <li><Link to="/menu">{t.nav.menu}</Link></li>
-            <li><a href="/#gallery">{t.nav.gallery}</a></li>
-            <li><a href="/#contact">{t.nav.contact}</a></li>
+            <li>
+              <a href="/#about">{t.nav.about}</a>
+            </li>
+            <li>
+              <Link to="/menu">{t.nav.menu}</Link>
+            </li>
+            <li>
+              <a href="/#gallery">{t.nav.gallery}</a>
+            </li>
+            <li>
+              <a href="/#contact">{t.nav.contact}</a>
+            </li>
           </ul>
         </div>
         <div>
-          <p className="eyebrow mb-4 text-accent">{t.footer.follow}</p>
+          {Object.values(restaurant.social).some((url) => url !== "#") && (
+            <p className="eyebrow mb-4 text-accent">{t.footer.follow}</p>
+          )}
           <div className="flex gap-4">
             {/* Placeholder links — replace in src/data/restaurant.ts */}
-            <a href={restaurant.social.instagram} aria-label="Instagram" className="opacity-85 hover:opacity-100"><Instagram /></a>
-            <a href={restaurant.social.facebook} aria-label="Facebook" className="opacity-85 hover:opacity-100"><Facebook /></a>
+            {restaurant.social.instagram !== "#" && (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={restaurant.social.instagram}
+                aria-label="Instagram"
+                className="opacity-85 hover:opacity-100"
+              >
+                <Instagram />
+              </a>
+            )}
+            {restaurant.social.facebook !== "#" && (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={restaurant.social.facebook}
+                aria-label="Facebook"
+                className="opacity-85 hover:opacity-100"
+              >
+                <Facebook />
+              </a>
+            )}
           </div>
           <p className="eyebrow mb-3 mt-8 text-accent">{t.footer.lang}</p>
           <LangSwitch />
