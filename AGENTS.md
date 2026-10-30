@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project structure
+- Keep restaurant pages, components, data, translations, and tests in their existing src subdirectories, with public icons in public; this preserves route discovery and relative imports.
+- The configured root server entry must import SSR helpers from src/lib; this preserves the existing build configuration without duplicating helpers.

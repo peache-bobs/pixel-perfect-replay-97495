@@ -7,6 +7,8 @@ import { LangSwitch, useLang } from "@/lib/i18n";
 export const Route = createFileRoute("/qr")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "QR Menü Kodu — Sempati Türk Mutfağı" },
       { name: "description", content: "Masalar için yazdırılabilir QR menü kodu oluşturun." },
       { property: "og:title", content: "QR Menü Kodu — Sempati" },

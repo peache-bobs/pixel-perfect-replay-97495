@@ -8,6 +8,8 @@ import { categories, menu, currency, type CategoryId } from "@/data/menu";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Menü — Sempati Türk Mutfağı" },
       {
         name: "description",
